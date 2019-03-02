@@ -1,0 +1,13 @@
+/*--------------------------------------------------------------
+# ACF Sections Styling
+--------------------------------------------------------------*/
+section {
+	padding-top: var(--gap);
+	padding-bottom: var(--gap);
+
+	section {
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+

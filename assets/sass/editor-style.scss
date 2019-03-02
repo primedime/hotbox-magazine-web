@@ -1,0 +1,61 @@
+/*--------------------------------------------------------------
+# Editor Styling
+--------------------------------------------------------------*/
+
+/*------- Mixins --------*/ 
+@import "base/mixins";
+
+/*------- variables --------*/ 
+@import "base/variables";
+
+/*------- Normalize --------*/
+@import "libs/normalize"; //includes outdated browser notice
+
+/*------- Base Layout --------*/
+@import "base/base_layout";
+
+/*------- CSS Grid --------*/
+@import "base/grid";
+
+/*------- Typography --------*/ 
+@import "global/typography";
+
+/*------- Forms --------*/
+@import "elements/forms";
+
+/*------- Content --------*/
+@import "elements/content";
+
+/*------- media --------*/
+@import "elements/media";
+
+/*------- Nav Menu  --------*/
+@import "base/menu_layout";
+ 
+
+/*------- Global elements --------*/ 
+@import "elements/icons";
+
+
+/*------- Animations --------*/
+@import "elements/animations";
+
+
+/*------- Sections --------*/ 
+@import "elements/sections";
+
+
+/*------- IE 11 --------*/
+@import "base/ie11";
+
+
+/*--------------------------------------------------------------
+# MCE Editor
+--------------------------------------------------------------*/
+.mce-content-body{
+  padding: 5px 30px !important;
+}
+
+.post-type-post, .post-type-page{
+  @extend .container-content;
+}

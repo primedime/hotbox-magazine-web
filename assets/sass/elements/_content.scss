@@ -1,0 +1,117 @@
+/*--------------------------------------------------------------
+# Articles
+--------------------------------------------------------------*/
+//here is where you can change the styles of your articles on single and archive views
+//for acf sections use sections.scss
+.single article{
+
+  .entry-content{
+    margin-bottom: var(--gap);
+  }
+}
+
+.after-article{
+  clear: both;
+}
+
+
+/*--------------------------------------------------------------
+# Default Cards on Archive pages
+--------------------------------------------------------------*/
+//to have this only affect post-type posts, change to .post.card or override with new .post-type.card
+.card {
+  box-shadow: 0 1px 12px rgba(black, .3);
+  border-radius: 5px;
+  position: relative;
+  color: var(--main-text-color);
+  display: flex;
+  flex-direction: column;
+
+  > * {
+    padding: 0 var(--gutters);
+  }
+
+  /*------- Card Header --------*/
+  .cover-image {
+    padding: 0;
+    img {
+      height: 250px;
+    }
+
+  }
+
+  .card-title {
+    @include font-size(26);
+    margin-bottom: var(--gutters);
+  }
+
+  a.term-link {
+    @include font-size(12);;
+    letter-spacing: .5px;
+    text-transform: uppercase;
+    font-weight: bold;
+  }
+
+  .more-link {
+    @extend .button;
+  }
+
+  .card-content {
+    flex: 1 0 auto;
+    @include font-size(16);
+  }
+
+  .card-meta{
+    display: flex;
+    padding-bottom: 5px;
+  }
+
+  .posted-on{
+    margin-right: 10px;
+  }
+
+}
+
+
+/*--------------------------------------------------------------
+# Article Meta
+--------------------------------------------------------------*/
+.updated {
+  display: none;
+}
+
+time, time a {
+  @include font-size(13);
+}
+
+
+/*--------------------------------------------------------------
+# Default Card Pagination
+--------------------------------------------------------------*/
+.pagination{
+  text-align: center;
+  padding: $gap 0;
+  .page-numbers{
+    background: #ff4a6b;
+    color: white;
+    margin: 0 3px;
+    padding: 3px 8px;
+    
+    *{
+      pointer-events: none;
+    }
+  }
+
+  .page-numbers.current{
+    background: grey;
+  }
+
+  .page-numbers.dots{
+    background: transparent;
+    color: grey;
+    margin: 0;
+  }
+}
+
+
+//ADD MORE CARDS AND STYLES FOR POST TYPES BELOW

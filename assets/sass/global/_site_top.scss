@@ -1,0 +1,76 @@
+/*--------------------------------------------------------------
+# Body
+--------------------------------------------------------------*/
+body {
+  background: var(--body-bg);
+}
+
+/*--------------------------------------------------------------
+# Logo
+--------------------------------------------------------------*/
+.site-logo {
+  @include font-size(33); //if its a text logo
+  text-transform: uppercase;
+
+  color: white;
+  max-width: 350px;
+}
+
+/*--------------------------------------------------------------
+# Site Top
+--------------------------------------------------------------*/
+.site-top {
+  position: relative; //change to fixed or absolute if wanted.
+  background: var(--site-top);
+}
+
+
+/*--------------------------------------------------------------
+# Desktop Menu Styling
+--------------------------------------------------------------*/
+@media(min-width: $media-nav) {
+  .site-top .menu {
+    li {
+      color: white;
+      font-weight: bold;
+    }
+
+    //top level items: current and hovered
+    .top-level-item {
+      &.current-menu-item .menu-item-link, .menu-item-link:hover, .menu-item-link.focus, &.toggled-on {
+        background: transparent;
+        color: black;
+      }
+
+      //top level submenu dropdown
+      & > .sub-menu {
+        background: #f78da7;
+
+        //inside sub menu: current and hovered
+        .menu-item-link:hover, .current-menu-item .menu-item-link, .menu-item-link.focus {
+          background: rgba(0, 0, 0, .5);
+          color: white;
+        }
+      }
+
+    }
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Menu Styling: Mobile and Vertical menus
+--------------------------------------------------------------*/
+.menu li {
+  color: white;
+}
+
+#panel-left .menu .current-menu-item > .menu-item-link, #panel-left .menu .menu-item-link.focus {
+  background: rgba(0, 0, 0, .5);
+  color: white;
+}
+
+//for more panel-left styling see panels.scss
+
+
+

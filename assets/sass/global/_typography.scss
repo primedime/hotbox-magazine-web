@@ -1,0 +1,216 @@
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+html {
+	font-size: 100%; //leave this alone and allow users browser to control base font size
+}
+
+body,
+button,
+input,
+select,
+textarea {
+	font-size: var(--font-size); //results in 1 rem
+	line-height: var(--line-height);
+	font-family: var(--font);
+	color: var(--main-text-color);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+}
+
+article{
+	font-size: calc(var(--font-size) + 2px); //results in 18px in rem.
+	// can also use sass mixin @include font-size(18); for same result
+}
+ 
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: var(--font-alt);
+	margin: 0 0 .3em 0;
+}
+
+
+p{
+	margin: 0 0 1em 0;
+}
+
+
+//only way to target Gutenberg paragraphs for now.
+.entry-content > p{
+	&:last-child{
+		margin-bottom: 0;
+	}
+}
+
+/*------- Quick text alignment classes --------*/
+.text-center {
+	text-align: center;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-justify{
+	text-align: justify;
+}
+
+//only center the heading inside a div
+.heading-center {
+	h1, h2, h3, h4, h5, h6 {
+		text-align: center;
+	}
+}
+
+/*--------------------------------------------------------------
+# Content Headings
+--------------------------------------------------------------*/
+h1, .h1 {
+	@include scss-font-lock(30px, 70px); //goes between 30 and 70px as window changes size.
+	line-height: 1.3;
+	font-weight: normal;
+	text-transform: uppercase;
+}
+
+h2, .h2 {
+	@include font-size(35);
+	margin-top: 42px;
+	line-height: 1.3;
+}
+
+h3, .h3 {
+	@include font-size(28);
+	margin-top: 40px;
+	line-height: 1.4;
+}
+
+h4, .h4 {
+	@include font-size(19);
+	margin-top: 30px;
+	line-height: 1.5;
+}
+
+/*--------------------------------------------------------------
+# Basic Links
+--------------------------------------------------------------*/
+
+a {
+	color: var(--highlight);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+/*--------------------------------------------------------------
+# Selection Highlighting
+--------------------------------------------------------------*/
+::selection {
+	background: var(--highlight);
+	color: white;
+}
+
+
+/*--------------------------------------------------------------
+# WP Edit Post Link
+--------------------------------------------------------------*/
+.edit-link {
+	@include font-size(.7);
+}
+
+/*--------------------------------------------------------------
+# quotes
+--------------------------------------------------------------*/
+dfn,
+cite,
+em,
+blockquote {
+	font-style: italic;
+}
+
+blockquote {
+	quotes: "“" "”";
+	overflow: hidden;
+	position: relative;
+	margin: 0 0 2em 0;
+	font-family: var(--font);
+	background: transparent;
+
+	p {
+		padding-left: 40px;
+	}
+
+	p:last-of-type {
+		margin: 0;
+	}
+
+	//quote mark
+	&:before {
+		content: open-quote;
+		@include font-size(30);
+		position: absolute;
+		top: 0;
+		line-height: 1;
+	}
+}
+
+
+cite, .wp-block-quote cite {
+	font-family: var(--font);
+	float: right;
+	margin-top: 0;
+	font-size: 14px;
+	&:before {
+		content: '\2014';
+		margin-right: 1em;
+	}
+}
+
+//overriding gutenberg on front end
+.wp-block-quote.is-large {
+	&:before {
+		@include font-size(40);
+	}
+	p {
+		@include font-size(20);
+	}
+}
+
+q {
+	quotes: "“" "”" "‘" "’";
+}
+
+
+/*--------------------------------------------------------------
+# Code
+--------------------------------------------------------------*/
+pre {
+	background: #f7f9fa;
+	border: 1px solid #e6e8eb;
+	font-family: var(--font-pre);
+	font-size: 14px;
+	line-height: var(--line-height-pre);
+	margin-top: 20px;
+	margin-bottom: 20px;
+	overflow: auto;
+	padding: 20px;
+	white-space: pre-wrap;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: var(--font-pre);
+	font-size: 15px;
+}
