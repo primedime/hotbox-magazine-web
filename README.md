@@ -1,3 +1,3 @@
-# ignition
+# HotBox Magazine
 
-![alt text](https://ignition.press/wp-content/themes/github-logo.png 'ignition')
+Built with Ignition Starter
